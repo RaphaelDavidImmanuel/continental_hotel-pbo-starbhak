@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KamarController;
+use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\FasilitasumumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.main');
 });
+Route::get('/kamar',[KamarController::class, 'index'])->name('kamar');
+
+// kamar
+
+// akhir kamar
