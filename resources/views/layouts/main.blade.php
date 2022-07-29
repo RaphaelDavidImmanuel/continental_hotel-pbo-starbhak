@@ -1,133 +1,149 @@
+<!--
+
+=========================================================
+* Argon Dashboard - v1.1.2
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="/sb/css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Continental Hotel</a>
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search Hotel . . . ." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            {{-- <div class="sb-sidenav-menu-heading">Core</div> --}}
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Home
-                            </a>
-                            {{-- <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a> --}}
 
-                            {{-- <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
-                                </nav>
-                            </div> --}}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        Argon Dashboard - Free Dashboard for Bootstrap 4 by Creative Tim
+    </title>
+    <!-- Favicon -->
+    <link href="{{ asset('/assets/img/brand/favicon.png') }}" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="{{ asset('/assets/js/plugins/nucleo/css/nucleo.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="{{ asset('/assets/css/argon-dashboard.css?v=1.1.2') }}" rel="stylesheet" />
+</head>
 
-                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a> --}}
-                            {{-- <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-
-                            </div> --}}
-                            <div class="sb-sidenav-menu-heading">Menu</div>
-                            <a class="nav-link" href="./kamar">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Kamar
-                            </a>
-                            <a class="nav-link" href="./fasilitas">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Fasilitas Kamar
-                            </a>
-                            <a class="nav-link" href="./fasilitasumum">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Fasilitas Umum
+<body class="">
+    <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+        <div class="container-fluid">
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Brand -->
+            <a class="navbar-brand pt-0" href="./index.html">
+                <img src="{{ asset('/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+            </a>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+                <!-- Collapse header -->
+                <div class="navbar-collapse-header d-md-none">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a href="./index.html">
+                                <img src="./assets/img/brand/blue.png">
                             </a>
                         </div>
+                        <div class="col-6 collapse-close">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
+                                aria-label="Toggle sidenav">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
                     </div>
-                    
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        @yield('content')
-
-                    </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                </div>
+                <!-- Form -->
+                <form class="mt-4 mb-3 d-md-none">
+                    <div class="input-group input-group-rounded input-group-merge">
+                        <input type="search" class="form-control form-control-rounded form-control-prepended"
+                            placeholder="Search" aria-label="Search">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fa fa-search"></span>
                             </div>
                         </div>
                     </div>
-                </footer>
+                </form>
+                <!-- Navigation -->
+                
+                <ul class="navbar-nav">
+                    {{-- <h4 class="text-center">Haloo {{ auth()->user()->nama }} ! </h4> --}}
+                    <li class="nav-item">
+                        <a class="nav-link " href="/home">
+                            <i class="ni ni-single-02 text-yellow"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/kamar">
+                            <i class="ni ni-single-02 text-yellow"></i> Kamar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/fasilitas">
+                            <i class="ni ni-bullet-list-67 text-red"></i> Fasilitas Kamar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/fasilitasumum">
+                            <i class="ni ni-bullet-list-67 text-red"></i> Fasilitas Umum
+                        </a>
+                    </li>
+                </ul>
+                <!-- Divider -->
+                <hr class="my-3">
+                <!-- Navigation -->
+                <ul class="navbar-nav mb-md-3">
+                    <li class="nav-item">
+                        <form action="logout" method="GET">
+                            @csrf
+                            <a class="nav-link"> 
+                                <button type="submit" class="btn btn-outline-dark"><i class="ni ni-user-run text-info"></i>  Logout</button>
+                            </a>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="/sb/js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="/sb/assets/demo/chart-area-demo.js"></script>
-        <script src="/sb/assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="/sb/js/datatables-simple-demo.js"></script>
-    </body>
-</html>
+    </nav>
+    <div class="main-content">
+        
+        <div class="container-fluid mt-7">
+            @yield('content')
+            
+        </div>
+
+    </div>
+    
+    <!--   Core   -->
+    <script src="{{ asset('/assets/js/plugins/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!--   Optional JS   -->
+    <script src="{{ asset('/assets/js/plugins/chart.js/dist/Chart.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/plugins/chart.js/dist/Chart.extension.js') }}"></script>
+    <!--   Argon JS   -->
+    <script src="{{ asset('/assets/js/argon-dashboard.min.js?v=1.1.2') }}"></script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+        window.TrackJS &&
+            TrackJS.install({
+                token: "ee6fab19c5a04ac1a32a645abde4613a",
+                application: "argon-dashboard-free"
+            });
+
+    </script>
+</body>
+
+</html>u    

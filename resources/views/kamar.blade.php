@@ -4,7 +4,7 @@
 <h1 class="text-center">Kamar</h1>
 
 <a href="/tambahkamar" class="btn btn-success mt-5 mb-4">tambah</a>
-<table class="table table-light">
+<table class="table table-light table-striped">
     <thead>
         <tr>
             <th scope="col">ID</th>
