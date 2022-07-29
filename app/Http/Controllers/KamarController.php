@@ -16,7 +16,7 @@ class KamarController extends Controller
     public function index()
     {
         $data = Kamar::all();
-        return view('kamar',compact('data'));
+        return view('admin.kamar',compact('data'));
     }
 
     /**
